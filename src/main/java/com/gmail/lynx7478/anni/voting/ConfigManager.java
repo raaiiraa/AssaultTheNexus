@@ -29,7 +29,6 @@ public class ConfigManager
 			save += setDefaultIfNotSet(mainConfig,"ProtocalHack", false);
 			save += setDefaultIfNotSet(mainConfig,"EndGameCommand", "stop");
 			save += setDefaultIfNotSet(mainConfig,"End-Of-Game-Countdown", 120);
-			save+= setDefaultIfNotSet(mainConfig, "Use-Metrics", true);
 			save += setDefaultIfNotSet(mainConfig, "Use-EnderChest", true);
 			save += setDefaultIfNotSet(mainConfig,"Use-EnderChest-Command", false);
 			save += setDefaultIfNotSet(mainConfig, "EnderChest-Slots", 9);
