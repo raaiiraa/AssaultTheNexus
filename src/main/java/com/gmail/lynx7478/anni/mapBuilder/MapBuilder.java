@@ -759,7 +759,7 @@ public class MapBuilder implements Listener
 						}
 						wrap.useMap = true;
 					}}, 
-					new ItemStack(Material.DIRT,1,(byte)0,(byte)2), ChatColor.GREEN+"Click to edit this map.");
+					new ItemStack(Material.DIRT, 1), ChatColor.GREEN+"Click to edit this map.");
 				mainMenu.setItem(14, useWorld);
 			}
 		}

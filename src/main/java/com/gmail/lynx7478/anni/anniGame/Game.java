@@ -141,6 +141,7 @@ public class Game
 					String path = worldFolder.getPath();
 					if(path.contains("plugins"))
 						path = path.substring(path.indexOf("plugins"));
+					path = path.replace('\\','/');
 					WorldCreator cr = new WorldCreator(path);
 					//WorldCreator cr = new WorldCreator(new File(worldFolder,"level.dat").toString());
 					cr.environment(Environment.NORMAL);

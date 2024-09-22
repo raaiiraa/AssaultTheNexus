@@ -92,6 +92,7 @@ public final class RegeneratingBlocks implements Listener
 							String effect = dataSection.getString("Effect");
 //							if(mat != null && matData != null && time != null && unit != null && xp != null && product != null
 //									&& amount != null && productData != null && effect != null)
+							Bukkit.broadcastMessage(mat.toString());
 								this.addRegeneratingBlock(new RegeneratingBlock(mat,matData,regen,cobbleReplace,naturalBreak,time,unit,xp,product,amount,
 										productData,effect));
 						}
@@ -108,6 +109,7 @@ public final class RegeneratingBlocks implements Listener
 			datas = new HashMap<Integer,RegeneratingBlock>();
 		datas.put(block.MaterialData, block);
 		blocks.put(block.Type, datas);
+		Bukkit.broadcastMessage("Added " + block.Type.toString());
 	}
 	
 	public RegeneratingBlock getRegeneratingBlock(Material type, Integer data)
