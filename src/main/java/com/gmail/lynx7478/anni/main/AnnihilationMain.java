@@ -92,7 +92,7 @@ public class AnnihilationMain extends JavaPlugin implements Listener
 	public void onEnable()
 	{
 		instance = this;
-		checkUpdate();
+		/* checkUpdate();
 		if(update)
 		{
 			Bukkit.getLogger().log(Level.INFO, "[-------------------------------]");
@@ -100,7 +100,7 @@ public class AnnihilationMain extends JavaPlugin implements Listener
 			Bukkit.getLogger().log(Level.INFO, "It is recommended that you download");
 			Bukkit.getLogger().log(Level.INFO, "the latest version from Spigot.");
 			Bukkit.getLogger().log(Level.INFO, "[-------------------------------]");
-		}
+		} */
 		loadLang();
 		new InvisibilityListeners(this);
 		Bukkit.getPluginManager().registerEvents(this,this);
@@ -657,7 +657,7 @@ public class AnnihilationMain extends JavaPlugin implements Listener
 		}
 	}
 	
-	private void checkUpdate()
+	/* private void checkUpdate()
 	{
 		this.getServer().getScheduler().runTaskAsynchronously(this, new Runnable() {
 			public void run()
@@ -685,7 +685,7 @@ public class AnnihilationMain extends JavaPlugin implements Listener
 				}
 			}
 		});
-	}
+	} */
 	
 	public boolean hasEssentials()
 	{
