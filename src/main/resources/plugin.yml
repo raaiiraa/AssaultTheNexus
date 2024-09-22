@@ -1,0 +1,49 @@
+name: AssaultTheNexus
+main: com.gmail.lynx7478.anni.main.AnnihilationMain
+version: 2.0
+authors: [Mr_Little_Kitty, Rai]
+description: Assault the Nexus minigame plugin.
+commands:
+  Anni:
+    description: provides commands for the Assault the Nexus game.
+    aliases: [atn, assaultthenexus]
+  Team:
+    description: Command related to assault the nexus' teams.
+  Area:
+    description: Command for managing assault the nexus areas.
+  Vote:
+    description: Allows players to vote for a map in assault the nexus.
+  Kit:
+    description: Opens the kit menu for the player
+  enderchest:
+    aliases: [ec, echest, enderc]
+    description: Opens the enderchest.
+  changeteam:
+    aliases: [ct]
+    description: Changes a players team.
+permissions:
+  A.anni:
+    description: gives permission to use the anni command
+    default: op
+  A.Area:
+    description: gives permission to use the anni command
+    default: op
+  Anni.ChangeKit:
+    description: allows a player to change their kit with a command
+    default: op
+  Anni.JoinPhase.3:
+    default: false
+  Anni.JoinPhase.4:
+    default: false
+  Anni.JoinPhase.5:
+    default: false
+  Anni.BypassJoin:
+    default: false
+  Anni.EC:
+    default: false
+  Anni.ChangeTeam:
+    default: false
+  Anni.ChatSpy:
+    default: op
+  Anni.OpenBrewingStands:
+    default: op
