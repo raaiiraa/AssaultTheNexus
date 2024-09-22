@@ -43,7 +43,6 @@ import com.bobacadodl.imgmessage.ImageMessage;
 import com.gmail.lynx7478.anni.anniEvents.AnniEvent;
 import com.gmail.lynx7478.anni.anniEvents.PlayerKilledEvent;
 import com.gmail.lynx7478.anni.anniEvents.PlayerKilledEvent.KillAttribute;
-import com.gmail.lynx7478.anni.anniGame.autoRespawn.RespawnHandler;
 import com.gmail.lynx7478.anni.anniMap.GameMap;
 import com.gmail.lynx7478.anni.enderchest.EnderChest;
 import com.gmail.lynx7478.anni.main.AnnihilationMain;
@@ -63,9 +62,9 @@ public class GameListeners implements Listener
 	public GameListeners(Plugin p)
 	{
         Bukkit.getPluginManager().registerEvents(this, p);
-        RespawnHandler.register(p);
 
 		String version = VersionUtils.getVersion();
+		//TODO: Update this.
 		if(version.contains("v1_8") || version.contains("v1_9") || version.contains("v1_10") || version.contains("v1_11") || version.contains("v1_12"))
 			new ArmorStandListener(p);
 		offlinePlayers = new ArrayList<String>();

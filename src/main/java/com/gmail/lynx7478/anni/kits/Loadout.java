@@ -3,6 +3,7 @@ package com.gmail.lynx7478.anni.kits;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gmail.lynx7478.anni.utils.Potion;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
@@ -10,7 +11,6 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
-import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
 
 import com.gmail.lynx7478.anni.anniGame.AnniPlayer;
@@ -140,7 +140,7 @@ public class Loadout
 	@SuppressWarnings("deprecation")
 	public Loadout addHealthPotion1()
 	{
-		return addItem(KitUtils.addSoulbound((new Potion(PotionType.INSTANT_HEAL, 1, false,false).toItemStack(1))));
+		return addItem(KitUtils.addSoulbound(new Potion(PotionType.HEALING, false).toItemStack(1)));
 	}
 	
 	public Loadout addBow()

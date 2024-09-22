@@ -73,7 +73,7 @@ public class SpecificBreaking implements Listener {
 			shovel = new ArrayList<Material>();
 			ItemUtils.addToList(shovel, 
 					Material.DIRT,
-					Material.GRASS,
+					Material.GRASS_BLOCK,
 					Material.SOUL_SAND,
 					Material.GRAVEL,
 					Material.CLAY,
@@ -153,7 +153,7 @@ public class SpecificBreaking implements Listener {
 			shovel = new ArrayList<Material>();
 			ItemUtils.addToList(shovel, 
 					Material.DIRT,
-					Material.GRASS,
+					Material.GRASS_BLOCK,
 					Material.SOUL_SAND,
 					Material.GRAVEL,
 					Material.CLAY,

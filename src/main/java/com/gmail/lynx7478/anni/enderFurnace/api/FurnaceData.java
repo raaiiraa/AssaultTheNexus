@@ -11,16 +11,13 @@ public abstract class FurnaceData
 
 
     /**
-     *EntityFurnace getProperty() IDS
-     *0 = burn time
-     *1 = ticks for current fuel
-     *2 = cook time
-     *3 = cook time total
-     * @param burnTime "getProperty(0)"
-     * @param ticksForCurrentFuel "getProperty(1)"
-     * @param cookTime "getProperty(2)"
+     * EntityFurnace getProperty() IDS
+     * 0 = burn time
+     * 1 = ticks for current fuel
+     * 2 = cook time
+     * 3 = cook time total
      */
-    public FurnaceData(ItemStack[] items, int burnTime, int ticksForCurrentFuel, int cookTime)
+    public FurnaceData(ItemStack[] items)
     {
         this.items = items;
         this.burnTime = burnTime;

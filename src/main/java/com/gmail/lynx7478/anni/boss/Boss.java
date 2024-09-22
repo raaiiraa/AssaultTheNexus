@@ -29,20 +29,20 @@ public class Boss {
 	
 	public static final void setup(){
 		reward1 = new ItemStack(Material.DIAMOND_SWORD);
-		reward1.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 4);
+		reward1.addUnsafeEnchantment(Enchantment.SHARPNESS, 4);
 		reward2 = new ItemStack(Material.DIAMOND_PICKAXE);
-		reward2.addUnsafeEnchantment(Enchantment.DIG_SPEED, 4);
+		reward2.addUnsafeEnchantment(Enchantment.EFFICIENCY, 4);
 		reward3 = new ItemStack(Material.DIAMOND_HELMET);
-		reward3.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+		reward3.addEnchantment(Enchantment.PROTECTION, 4);
 		
 		reward4 = new ItemStack(Material.DIAMOND_CHESTPLATE);
-		reward4.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+		reward4.addEnchantment(Enchantment.PROTECTION, 4);
 		
 		reward5 = new ItemStack(Material.DIAMOND_LEGGINGS);
-		reward5.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+		reward5.addEnchantment(Enchantment.PROTECTION, 4);
 		
 		reward6 = new ItemStack(Material.DIAMOND_BOOTS);
-		reward6.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+		reward6.addEnchantment(Enchantment.PROTECTION, 4);
 	}
 	
 	/** @EventHandler(priority=EventPriority.HIGHEST)

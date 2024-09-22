@@ -13,7 +13,7 @@ public enum CustomItem
 {
 	NAVCOMPASS(ChatColor.DARK_PURPLE+"Right click to change target nexus",Material.COMPASS,(byte)0,true,null),
 	KITMAP(ChatColor.AQUA+"Right click to choose a kit",Material.BOOK,(byte)0,true,null),
-	VOTEMAP(ChatColor.AQUA+"Right click to vote for a map",Material.GRASS,(byte)0,true,null),
+	VOTEMAP(ChatColor.AQUA+"Right click to vote for a map",Material.GRASS_BLOCK,(byte)0,true,null),
 	TEAMMAP(ChatColor.AQUA+"Right click to join a team",Material.NETHER_STAR,(byte)0,true,null),
 	MAPBUILDER(ChatColor.AQUA+"Right click to open the map builder",Material.DIAMOND_PICKAXE,(byte)0,true,null),
 	BREWINGSHOP(ChatColor.AQUA+"Brewing Shop Helper",Material.GLASS_BOTTLE,(byte)0,true, new String[] 

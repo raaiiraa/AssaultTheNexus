@@ -47,12 +47,6 @@ public class CloseMenuItem extends StaticMenuItem
 	
 	public static void init() throws ClassNotFoundException
 	{
-		if(VersionUtils.above13())
-		{
-			mat = Material.LEGACY_RECORD_4;
-		}else
-		{
-			mat = (Material) Enum.valueOf((Class<Enum>) Class.forName("org.bukkit.Material"), "RECORD_4");
-		}
+		mat = Material.LEGACY_RECORD_4;
 	}
 }

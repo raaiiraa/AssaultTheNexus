@@ -734,7 +734,7 @@ public class MapBuilder implements Listener
 					}
 					else player.sendMessage(ChatColor.RED+"There are no worlds in the worlds folder.");
 				}}, 
-				new ItemStack(Material.GRASS), ChatColor.GREEN+"Click to load a new map.");
+				new ItemStack(Material.GRASS_BLOCK), ChatColor.GREEN+"Click to load a new map.");
 			if(Game.getGameMap() == null)
 			{
 				//There is no currently loaded map
@@ -997,7 +997,7 @@ public class MapBuilder implements Listener
 		ItemMenu menu = new ItemMenu("Annihilation Maps Menu",Size.fit(files.length),parent);
 		for(int x = 0; x < files.length; x++)
 		{
-			menu.setItem(x, new ComboMenuItem(files[x].getName(),menu.getParent(),handler,new ItemStack(Material.GRASS),"Click to select the map: "+files[x].getName()));
+			menu.setItem(x, new ComboMenuItem(files[x].getName(),menu.getParent(),handler,new ItemStack(Material.GRASS_BLOCK),"Click to select the map: "+files[x].getName()));
 		}
 		return menu;
 	}
