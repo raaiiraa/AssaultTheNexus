@@ -1,34 +1,39 @@
-package com.gmail.lynx7478.anni.enderFurnace.versions.v1_13_R2;
+package com.gmail.lynx7478.anni.enderFurnace.versions.v1_21_R1;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_13_R2.block.CraftFurnace;
-import org.bukkit.craftbukkit.v1_13_R2.entity.CraftPlayer;
-import org.bukkit.craftbukkit.v1_13_R2.inventory.CraftItemStack;
-import org.bukkit.entity.Player;
+import org.bukkit.Location;
+import org.bukkit.craftbukkit.v1_21_R1.block.CraftFurnace;
+import org.bukkit.craftbukkit.v1_21_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftItemStack;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
 import com.gmail.lynx7478.anni.enderFurnace.api.IFurnace;
 import com.gmail.lynx7478.anni.enderFurnace.api.ReflectionUtil;
 
-import net.minecraft.server.v1_13_R2.ChatMessage;
-import net.minecraft.server.v1_13_R2.EntityHuman;
-import net.minecraft.server.v1_13_R2.EntityPlayer;
-import net.minecraft.server.v1_13_R2.TileEntityFurnace;
-
-class Furnace_v1_13_R2 extends TileEntityFurnace implements IFurnace
+class Furnace_v1_21_R1 extends AbstractFurnaceBlockEntity implements IFurnace
 {
-    	private EntityPlayer owningPlayer;
+    	private net.minecraft.world.entity.player.Player owningPlayer;
 
-    	public Furnace_v1_13_R2(Player p)
+    	public Furnace_v1_21_R1(org.bukkit.entity.Player p)
     	{
-    		EntityPlayer player = ((CraftPlayer) p).getHandle();
+            super(BlockEntityType.FURNACE, new BlockPos(0,0,0), null, RecipeType.SMELTING);
+            ServerPlayer player = ((CraftPlayer) p).getHandle();
     		this.owningPlayer = player;
-    		this.world = player.world;
+    		this.level = player.level();
     		//try
     		//{
-    			//ReflectionUtil.setSuperValue(this, "m", "Ender Furnace");
-                super.setCustomName(new ChatMessage("Ender Furnace"));
+    			//ReflectionUtil.setSuperValue(this, "m", "Ender Furnace")
+
                // this.a(new BlockPosition(0,0,0));
     		//}
     		//catch (Exception e)
@@ -37,8 +42,9 @@ class Furnace_v1_13_R2 extends TileEntityFurnace implements IFurnace
     		//}
     	}
 
-    	@Override
-    	public boolean a(EntityHuman entityhuman)
+
+		@Override
+    	public boolean canOpen(Player entityhuman)
     	{
     		return true;
     	}
@@ -62,7 +68,17 @@ class Furnace_v1_13_R2 extends TileEntityFurnace implements IFurnace
     //		while(b != null && b.getType() != Material.AIR)
     //			b = this.world.getWorld().getBlockAt(++x,0,0);
     //		Furnace furnace = new CraftFurnace(b);
-    		org.bukkit.block.Furnace furnace = new CraftFurnace(this.world.getWorld().getBlockAt(0, 0, 0));
+    		org.bukkit.block.Furnace furnace = new CraftFurnace(this.level.getWorld(), this) {
+				@Override
+				public CraftFurnace copy() {
+					return null;
+				}
+
+				@Override
+				public CraftFurnace copy(Location location) {
+					return null;
+				}
+			};
     		try
     		{
     			ReflectionUtil.setValue(furnace, "furnace", this);
@@ -89,7 +105,7 @@ class Furnace_v1_13_R2 extends TileEntityFurnace implements IFurnace
     		//Bukkit.getLogger().info("Owning players name is "+this.owningPlayer.getName());
     		//this.owningPlayer.openTileEntity(this);//openFurnace(this);
             Bukkit.getLogger().info("Attempted to open for player "+owningPlayer.getName());
-            owningPlayer.openContainer(this);
+            owningPlayer.openMenu(this);
     	}
 
     	@Override
@@ -97,7 +113,7 @@ class Furnace_v1_13_R2 extends TileEntityFurnace implements IFurnace
     	{
             try
             {
-                this.h();//this used to be h(); And it is h(); again.
+                this.tick();//this used to be h(); And it is h(); again.
             }
             catch(Throwable t)
             {
@@ -126,9 +142,19 @@ class Furnace_v1_13_R2 extends TileEntityFurnace implements IFurnace
     {
         ItemStack[] items = data.getItems();
         for(int x = 0; x < 3; x++)
-            this.setItem(x, org.bukkit.craftbukkit.v1_13_R2.inventory.CraftItemStack.asNMSCopy(items[x]));
-        this.c(0,data.getBurnTime());
-        this.c(1,data.getTicksForCurrentFuel());
-        this.c(2,data.getCookTime());
+            this.setItem(x, org.bukkit.craftbukkit.v1_21_R1.inventory.CraftItemStack.asNMSCopy(items[x]));
+        this.triggerEvent(0,data.getBurnTime());
+        this.triggerEvent(1,data.getTicksForCurrentFuel());
+        this.triggerEvent(2,data.getCookTime());
     }
+
+	@Override
+	protected Component getDefaultName() {
+		return null;
+	}
+
+	@Override
+	protected AbstractContainerMenu createMenu(int i, Inventory inventory) {
+		return null;
+	}
 }

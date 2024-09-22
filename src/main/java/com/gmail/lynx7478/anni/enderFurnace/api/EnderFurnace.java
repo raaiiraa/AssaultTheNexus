@@ -69,7 +69,7 @@ public final class EnderFurnace
 
             @Override
             public void open() { p.sendMessage("Sorry, this server is using an unsupported version for Ender Furnaces. Version: "+version);
-            p.sendMessage("Please contact Expl0itBypass and give him the name of the version display above.");}
+            p.sendMessage("Please contact Rai and give the name of the version display above.");}
 
             @Override
             public FurnaceData getFurnaceData()

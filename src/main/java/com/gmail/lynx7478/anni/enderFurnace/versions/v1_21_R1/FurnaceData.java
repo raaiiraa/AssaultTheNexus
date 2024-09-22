@@ -1,4 +1,4 @@
-package com.gmail.lynx7478.anni.enderFurnace.versions.v1_13_R2;
+package com.gmail.lynx7478.anni.enderFurnace.versions.v1_21_R1;
 
 import net.minecraft.server.v1_13_R2.TileEntityFurnace;
 
@@ -7,7 +7,7 @@ class FurnaceData extends com.gmail.lynx7478.anni.enderFurnace.api.FurnaceData
 	
 	private static TileEntityFurnace furnace;
 	
-    public FurnaceData(Furnace_v1_13_R2 furnace_v1_13_R2)
+    public FurnaceData(Furnace_v1_21_R1 furnace_v1_13_R2)
     {
         super(asBukkitCopy(getStacksAsCollection()),furnace_v1_13_R2.getProperty(0),furnace_v1_13_R2.getProperty(1),furnace_v1_13_R2.getProperty(2));
         FurnaceData.furnace = furnace_v1_13_R2;
