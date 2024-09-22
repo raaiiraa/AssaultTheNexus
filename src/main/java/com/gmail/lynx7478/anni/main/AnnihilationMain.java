@@ -21,7 +21,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.mcstats.Metrics;
 
 import com.gmail.lynx7478.anni.anniEvents.GameEndEvent;
 import com.gmail.lynx7478.anni.anniEvents.GameStartEvent;
@@ -115,18 +114,6 @@ public class AnnihilationMain extends JavaPlugin implements Listener
 		if(GameVars.isHardcore())
 		{
 			new Hardcore();
-		}
-		
-		if(GameVars.getUseMetrics())
-		{
-			try
-			{
-				Metrics metrics = new Metrics(this);
-				metrics.start();
-			}catch(IOException e)
-			{
-				e.printStackTrace();
-			}
 		}
 		
 // 		Stuff so 1.13 doesn't break.

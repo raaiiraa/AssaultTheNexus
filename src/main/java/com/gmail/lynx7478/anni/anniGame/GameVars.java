@@ -53,8 +53,7 @@ public class GameVars
 	private static boolean revealOnDamage;
 	
 	private static boolean useCivilianKit = true;
-	
-	private static boolean useMetrics = true;
+
 	
 	//TODO: Hardcore mode.
 	private static boolean hardcore;
@@ -182,11 +181,7 @@ public class GameVars
 	{
 		return new File(Map);
 	}
-	
-	public static boolean getUseMetrics()
-	{
-		return useMetrics;
-	}
+
 	
 	public static boolean isHardcore()
 	{
@@ -215,7 +210,6 @@ public class GameVars
 			ecSlots = config.getInt("EnderChest-Slots");
 			hideTags = config.getBoolean("Hide-Other-Teams-Tag");
 			useSpecificBreaking = config.getBoolean("Use-Specific-Breaking");
-			useMetrics = config.getBoolean("Use-Metrics");
 			usePEX = config.getBoolean("Use-PEX");
 			if(useEC){
 				if(!(ecSlots % 9 == 0)){
