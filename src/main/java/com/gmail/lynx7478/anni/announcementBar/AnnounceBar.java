@@ -20,7 +20,7 @@ public class AnnounceBar
         return instance;
     }
 
-    private Bar bar;
+    private IBar bar;
 
     private Announcement announcement;
 
@@ -30,20 +30,24 @@ public class AnnounceBar
 
     private AnnounceBar()
     {
-        try
+        //TODO: Rewrite without reflection. Not needed anymore!
+        /* try
         {
             String version = VersionUtils.getVersion();
             String name = "com.gmail.lynx7478.anni.announcementBar.versions."+version+".Bar";
             Class<?> cl = Class.forName(name);
-            Class<? extends Bar> bar = cl.asSubclass(Bar.class);
-            Bar manager = bar.newInstance();
-            this.bar = manager;
+            Class<? extends IBar> bar = cl.asSubclass(IBar.class);
+            IBar manager = bar.newInstance();
+            this.bar = new Bar();
         }
         catch (Throwable t)
         {
             //t.printStackTrace();
             bar = new FakeBar();
-        }
+        } */
+        this.bar = new Bar();
+
+
     }
 
     public TempData getData()
@@ -130,7 +134,7 @@ public class AnnounceBar
         return DurationFormatUtils.formatDuration(miliseconds, "mm:ss");
     }
     
-    public Bar getBar(){
+    public IBar getBar(){
     	return bar;
     }
 }

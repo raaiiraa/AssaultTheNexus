@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-class FakeBar implements Bar
+class FakeBar implements IBar
 {
     //This bar should tell the player that the server is using an unsuported version, but also send the phase message
     private Map<UUID,Long> timers;
