@@ -30,24 +30,7 @@ public class AnnounceBar
 
     private AnnounceBar()
     {
-        //TODO: Rewrite without reflection. Not needed anymore!
-        /* try
-        {
-            String version = VersionUtils.getVersion();
-            String name = "com.gmail.lynx7478.anni.announcementBar.versions."+version+".Bar";
-            Class<?> cl = Class.forName(name);
-            Class<? extends IBar> bar = cl.asSubclass(IBar.class);
-            IBar manager = bar.newInstance();
-            this.bar = new Bar();
-        }
-        catch (Throwable t)
-        {
-            //t.printStackTrace();
-            bar = new FakeBar();
-        } */
         this.bar = new Bar();
-
-
     }
 
     public TempData getData()
