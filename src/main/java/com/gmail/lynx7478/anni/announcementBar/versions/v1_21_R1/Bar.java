@@ -1,14 +1,9 @@
 package com.gmail.lynx7478.anni.announcementBar.versions.v1_21_R1;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
-
-import com.gmail.lynx7478.anni.utils.VersionUtils;
 
 public class Bar implements com.gmail.lynx7478.anni.announcementBar.Bar
 {
