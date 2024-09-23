@@ -25,7 +25,7 @@ class FakeBar implements Bar
         {
         	String version = VersionUtils.getVersion();
             player.sendMessage("This server is using an unsupported version for the phase bar!" + " Version: " + version +  ".");
-            player.sendMessage("Please contact Expl0itBypass and give him the name of the version display above.");
+            player.sendMessage("Please contact Rai and give the name of the version displayed above.");
             player.sendMessage(message);
             timers.put(player.getUniqueId(),System.currentTimeMillis()+(20*1000)); //Send them the message every 20 seconds
         }
