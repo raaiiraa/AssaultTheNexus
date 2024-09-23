@@ -44,17 +44,7 @@ public class EnderChest implements Listener {
 			if(e.getClickedBlock().getType() == Material.ENDER_CHEST){
 				if(GameVars.getUseEC()){
 					e.setCancelled(true);
-					if(!VersionUtils.above9()){
-						try {
-							Class<Enum> cls = (Class<Enum>) Class.forName("org.bukkit.Sound");
-							p.playSound(p.getLocation(), (Sound) Enum.valueOf(cls, "CHEST_OPEN"), 10F, 10F);
-						} catch (ClassNotFoundException e1) {
-							e1.printStackTrace();
-						}
-						
-					}else{
-						p.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 10F, 10F);
-					}
+					p.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 10F, 10F);
 					EnderChest.getChestFor(p).open();
 				}else{
 					e.setCancelled(true);
